@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- /* * $Id: struts-plugin.xml 722219 2008-12-01 20:41:26Z musachy $ * 
+	* Licensed to the Apache Software Foundation (ASF) under one * or more contributor 
+	license agreements. See the NOTICE file * distributed with this work for 
+	additional information * regarding copyright ownership. The ASF licenses 
+	this file * to you under the Apache License, Version 2.0 (the * "License"); 
+	you may not use this file except in compliance * with the License. You may 
+	obtain a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 
+	* * Unless required by applicable law or agreed to in writing, * software 
+	distributed under the License is distributed on an * "AS IS" BASIS, WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY * KIND, either express or implied. See the 
+	License for the * specific language governing permissions and limitations 
+	* under the License. */ -->
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="true" 
+		/> <constant name="struts.devMode" value="true" /> -->
+	<!-- <package name="default" namespace="/" extends="struts-default">  -->
+	<package name="default" namespace="/" extends="json-default"> 
+
+		<action name="la1" class="action" method="Login">
+		</action>
+		<action name="login" class="action" method="Login">
+			<result name="normal">chaxun.jsp</result>
+		</action>
+		<action name="a" class="action" method="Login">
+		</action>
+		<action name="test" class="action" method="Test">
+		</action>
+		<!-- 所有人查询 -->
+		<action name="all" class="action" method="allfind">
+			<result name="y">alluserdate.jsp</result>
+		</action>
+		<action name="all2" class="action" method="allfind2">
+			<result name="y">alluserdate.jsp</result>
+		</action>
+		<action name="part" class="action" method="partfind">
+			<result name="y">partuser.jsp</result>
+			<result name="n">userdate.jsp</result>
+		</action>
+		<action name="part2" class="action" method="partfind2">
+			<result name="y">partuser.jsp</result>
+		</action>
+		<!-- 改变自己的信息 -->
+		<action name="mchange" class="action" method="mchange">
+			<result name="y">userdate.jsp</result>
+		</action>
+
+		<!-- <action name="namefind" class="action" method="namefind"> <result 
+			name="y">oneuser.jsp</result> </action> -->
+
+		<action name="s" class="action" method="submitresume">
+		</action>
+		<!-- 离职审核 -->
+		<action name="leavesh" class="action" method="leavecheck">
+			<result name="success">shleave.jsp</result>
+			<result name="n">leave.jsp</result>
+		</action>
+		<!-- 入职管理 -->
+		<action name="r" class="action" method="comeC">
+		</action>
+		<!--点击离职申请修改和撤销按钮后，判断是否存在申请，存在就把信息显示在输入框中 -->
+		<action name="leavechange1" class="action" method="leavechange1">
+		</action>
+		<!-- 点击修改 update自己的离职信息 成功到leave.jsp -->
+		<action name="leavechange2" class="action" method="leavechange2">
+		</action>
+		<!-- 点击撤销自己的离职信息 -->
+		<action name="deleteleave" class="action" method="deleteleave">
+		</action>
+		<!-- 同意离职 -->
+		<action name="tongyileave" class="action" method="agreeleave">
+			<result name="s">shleave.jsp</result>
+		</action>
+		<action name="GetPostP" class="cn.edu.android.GetPostP" method="RespomP"></action>
+	</package>
+</struts>
